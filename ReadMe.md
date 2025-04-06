@@ -24,6 +24,7 @@ Welcome to the **PHA5E** website project! This repository contains a modern, red
 - **Git**: Version control for tracking changes and collaboration. 📂
 
 ## Project Structure 📁
+<pre>
 PHA5E/
 ├── images/           # Image assets (hero images, favicon) 🖼️
 │   ├── image-1.jpg
@@ -35,6 +36,7 @@ PHA5E/
 ├── style.css        # Stylesheet with responsive design and animations 🎨
 ├── script.js        # JavaScript for interactivity and navbar toggle ⚙️
 └── README.md        # Project documentation (you're reading it!) 📖
+</pre>
 
 ## Installation 🛠️
 
