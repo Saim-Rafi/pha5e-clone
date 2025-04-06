@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.language-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.language-toggle a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .language-toggle {
+    flex-direction: row; 
+    gap: 15px
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  perspective: 1000px; /* Adds 3D perspective for depth effect */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  transition: transform 0.5s ease; /* Animation for text movement */
+}
+
+.hero-text {
+  font-size: 7vw;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 3;
+  left: 20px;
+  letter-spacing: 2px;
+}
+
+.hero-text span {
+  /*display: block;*/
+  /*position: absolute;*/
+  transition: transform 0.5s ease, color 0.5s ease;
+  -webkit-text-stroke: 1px white;
+  color: white;
+}
+/*
+.span-1 {
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 58px;
+}
+.span-2 {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.span-3 {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+/*
+.span-4 {
+  display: block;
+  position: relative;
+  left: 60px;
+}
+.span-5 {
+  display: block;
+  position: relative;
+  left: 60px;
+}
+*/
+
+.image-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.grid-image {
+  position: absolute;
+  object-fit: cover;
+  transition: transform 0.5s ease, z-index 0s; /* Smooth scaling animation */
+  pointer-events: auto;
+  transform: scale(1); /* Default scale */
+}
+
+.grid-image:hover {
+  z-index: 10 !important;
+  transform: scale(1.2); /* Image grows larger on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* When any grid image is hovered, move the text back */
+.image-grid:hover ~ .hero-content {
+  transform: translateZ(-200px); /* Text moves backward in 3D space */
+}
+
+/* Position the grid images (unchanged) */
+.image-1 {
+  width: 25%;
+  height: 40%;
+  top: 20%;
+  left: 5%;
+  z-index: 1;
+}
+
+.image-2 {
+  width: 20%;
+  height: 30%;
+  top: 15%;
+  right: 15%;
+  z-index: 1;
+}
+
+.image-3 {
+  width: 30%;
+  height: 25%;
+  bottom: 20%;
+  left: 20%;
+  z-index: 1;
+}
+
+.image-4 {
+  width: 20%;
+  height: 35%;
+  bottom: 15%;
+  right: 5%;
+  z-index: 1;
+}
